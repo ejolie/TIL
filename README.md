@@ -1,13 +1,3 @@
 # Today I Learned
 
-## 20180331
-Hello!
-
-* python
-* css3
-* html5
-
-
-## 20180402
-* list
-* class
+오늘 공부한 내용을 정리합니다.
