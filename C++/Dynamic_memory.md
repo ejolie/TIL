@@ -88,4 +88,3 @@ array 에도 메모리 동적 할당이 가능하다. delete 오른쪽의 bracke
 
 
 출처: https://www.sololearn.com/Play/CPlusPlus
-
