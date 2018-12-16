@@ -1,0 +1,34 @@
+{
+  "name": "victory-tutorial",
+  "version": "1.0.0",
+  "description": "A tutorial for Victory used with the Getting Started guide in Victory Docs.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --content-base dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FormidableLabs/victory-tutorial.git"
+  },
+  "author": "emma.brillhart@formidable.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FormidableLabs/victory-tutorial/issues"
+  },
+  "homepage": "https://github.com/FormidableLabs/victory-tutorial#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "webpack": "^4.18.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "victory": "^0.26.1"
+  }
+}
