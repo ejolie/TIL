@@ -16,7 +16,21 @@ class Counter extends Component {
 
   // solution : use arrow function (bind this in constructor not required)
   // arrow function inherit this keyword
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('prevProps', prevProps);
+    console.log('prevState', prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      // Ajax call and get new data from the server
+    }
+  }
+
+  componentWillUnmount() {
+    console.log('Counter - Unmount');
+  }
+
   render() {
+    console.log('Counter - Rendered');
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
