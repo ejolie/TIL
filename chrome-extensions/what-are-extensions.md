@@ -1,5 +1,7 @@
 # 확장 프로그램(Extensions)이란?
 
+본 게시물은 [What are extensions?](https://developer.chrome.com/extensions) 을 한국어로 번역한 글입니다. 생활코딩 강의를 보고 크롬 익스텐션 개발에 관심을 갖게 되어 번역을 하게 되었습니다.😃
+
 확장 프로그램은 브라우저 경험을 사용자화 할 수 있는 작은 소프트웨어 프로그램입니다. 확장 프로그램을 통해 사용자는 크롬의 기능과 동작을 자신의 요구와 선호에 따라 조정할 수 있습니다. 이것은 HTML, 자바스크립트, CSS와 같은 웹 기술로 만들어졌습니다.
 
 확장 프로그램은 좁게 정의되고 이해하기 쉬운  [단 하나의 목적(single purpose)](https://developer.chrome.com/single_purpose) 을 충족시켜야 합니다. 하나의 확장 프로그램은 다양한 요소와 여러 기능을 포함할 수 있으나 모든 것은 공통의 목적을 위한 것이어야 합니다.
@@ -12,7 +14,7 @@
 
 
 
-## Hello Extensions
+## 🙌Hello Extensions
 
 Hello Extensions 예제를 통해 확장 프로그램 개발을 쉽게 배워 봅시다. 먼저, 확장 프로그램 파일들을 저장하기 위한 새로운 디렉토리를 만들거나 [sample page](https://developer.chrome.com/extensions/samples#search:hello) 에서 파일들을 다운받으세요.
 
@@ -52,7 +54,7 @@ Hello Extensions 예제를 통해 확장 프로그램 개발을 쉽게 배워 �
   </html>
 ```
 
-이제 확장 프로그램 아이콘이 클릭되었을 때  `hello.html` 파일이 보입니다. 다음 단계는 키보드 단축키 명령어를  `manifest.json` 안에 작성하는 것입니다. 이 단계는 흥미롭지만 필수적인 것은 아닙니다.
+이제 확장 프로그램 아이콘이 클릭되었을 때 `hello.html` 파일이 보입니다. 다음 단계는 키보드 단축키 명령어를  `manifest.json` 안에 작성하는 것입니다. 이 단계는 흥미롭지만 필수적인 것은 아닙니다.
 
 ```
   {
@@ -87,7 +89,7 @@ Hello Extensions 예제를 통해 확장 프로그램 개발을 쉽게 배워 �
 
 
 
-## 다음으로는?
+## 🤔다음으로는?
 
 1. [Getting Started tutorial](https://developer.chrome.com/getstarted) 를 진행하세요.
 2. [Overview](https://developer.chrome.com/overview) 를 읽어 보세요.
@@ -96,7 +98,7 @@ Hello Extensions 예제를 통해 확장 프로그램 개발을 쉽게 배워 �
 
 
 
-## 관련 영상
+## 🖥관련 영상
 
 [Technical videos](http://www.youtube.com/view_play_list?p=CA101D6A85FE9D4B) 
 [Developer snapshots](http://www.youtube.com/view_play_list?p=38DF05697DE372B1)
