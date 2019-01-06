@@ -14,9 +14,10 @@
 
 ### 1) [Learning JavaScript](javascript/learning-javascript)
 
-### 2) Syntax
+### 2) practice
 
 ## 5. Python
 
+### 1) [swea](python/swea)
 
-
+### 2) [practice](python/practice)
