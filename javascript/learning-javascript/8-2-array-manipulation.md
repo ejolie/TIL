@@ -108,3 +108,126 @@ arr.fill(0, -3, -1);
 ```
 
 ### 8.2.7 배열 정렬과 역순 정렬
+`reverse`는 이름 그대로 배열 요소의 순서를 반대로 바꿉니다(수정).
+
+```javascript
+const arr = [1, 2, 3, 4, 5];
+arr.reverse()   // arr = [5, 4, 3, 2, 1]
+```
+
+`sort`는 배열 요소의 순서를 정렬합니다.
+
+```javascript
+const arr = [5, 3, 2, 4, 1];
+arr.sort();     // arr = [1, 2, 3, 4, 5]
+```
+
+`sort`는 _정렬 함수_ 를 받을 수 있습니다. 이 기능은 매우 편리합니다. 예를 들어 일반적으로는 객체가 들어있는 배열을 정렬할 수 없지만, 정렬 함수를 사용하면 가능합니다.
+
+```javascript
+const arr = [
+    { name: 'Suzanne' },
+    { name: 'Jim' },
+    { name: 'Trevor' },
+    { name: 'Amanda' },
+];
+arr.sort();
+// arr은 바뀌지 않습니다.
+
+arr.sort((a, b) => a.name > b.name);
+// arr은 name 프로퍼티의 알파벳 순으로 정렬됩니다.
+
+arr.sort((a, b) => a.name[1] < b.name[2]);
+// arr은 name 프로퍼티의 두 번째 글자의 알파벳 역순으로 정렬됩니다.
+```
+
+
+## 8.3 배열 검색
+배열 안에서 뭔가 찾으려 할 때는 몇 가지 방법이 있습니다. 우선 `indexOf`는 찾고자 하는 것과 정확히 일치(===)하는 첫 번째 요소의 인덱스를 반환합니다. `indexOf`의 짝인 `lastIndexOf`는 배열의 끝에서부터 검색합니다. 배열의 일부분만 검색하려면 시작 인덱스를 지정할 수 있습니다. `indexOf`와 `lastIndexOf`는 일치하는 것을 찾이 못하면 -1을 반환합니다.
+
+```javascript
+const o = { name: 'Jerry' };
+const arr = [1, 5, 'a', o, true, 5, [1, 2], '9'];
+
+arr.indexOf(5);         // 1
+arr.lastIndexOf(5);     // 5
+
+arr.indexOf('a');       // 2
+arr.lastIndexOf('a');   // 2
+```
+
+`findIndex`는 일치하는 것을 찾지 못했을 때 -1을 반환한다는 점에서는 `indexOf`와 비슷하지만, 보조 함수를 써서 검색 조건을 지정할 수 있으므로 `indexOf`보다 더 다양한 상황에서 활용할 수 있습니다. 하지만 `findIndex`는 검색을 시작할 인덱스를 지정할 수 없고, 뒤에서부터 찾는 `findLastIndex` 같은 짝도 없습니다.
+
+```javascript
+const arr = [
+    { id: 5, name: 'Judith' },
+    { id: 7, name: 'Francis' },
+]
+
+arr.findIndex(o => o.id === 5);     // 0
+arr.findIndex(o => o.name === 'Francis');   // 0
+```
+
+`indexOf`와 `findIndex`는 조건에 맞는 요소의 인덱스를 찾을 때 알맞지만, 조건에 맞는 요소의 인덱스가 아니라 요소 자체를 원할 때는 `find`를 사용합니다. `find`는 `findIndex`와 마찬가지로 검색 조건을 함수로 전달할 수 있습니다. 조건에 맞는 요소가 없을 때는 `undefined`를 반환합니다.
+
+```javascript
+const arr = [
+    { id: 5, name: 'Judith' },
+    { id: 7, name: 'Francis' },
+]
+
+arr.find(o => o.id === 5);  // Object { id: 5, name: 'Judith' }
+arr.find(o => o.id === 2);  // undefined
+```
+
+`find`와 `findIndex`에 전달하는 함수는 배열의 각 요소를 첫 번째 매개변수로 받고, 현재 요소의 인덱스와 배열 자체도 매개변수로 받습니다. 이런 점을 다양하게 응용할 수 있습니다. 예를 들어, 특정 인덱스보다 뒤에 있는 제곱수를 찾아야 한다고 합시다.
+
+```javascript
+const arr = [1, 17, 16, 5, 4, 16, 10, 3, 49];
+arr.find((x, i) => i > 2 && Number.isInteger(Math.sqrt(x))); // 4
+```
+
+`find`와 `findIndex`에 전달하는 함수의 `this`도 수정할 수 있습니다. 이를 이용해서 함수가 객체의 메서드인 것처럼 호출할 수 있습니다. ID를 조건으로 `Person` 객체를 검색하는 예제를 보십시오. 두 방법의 결과는 같습니다.
+
+```javascript
+class Person {
+    constructor(name) {
+        this.name = name;
+        this.id = Person.nextId++;
+    }
+}
+
+Person.nextId = 0;
+
+const jamie = new Person('Jamie'),
+    juliet = new Person('Juliet'),
+    peter = new Person('Peter'),
+    jay = new Person('Jay'),
+const arr = [jamie, juliet, peter, jay];
+
+// 옵션 1 : ID를 직접 비교하는 방법
+arr.find(p => p.id === juliet.id);  // juliet Object
+
+// 옵션 2 : 'this' 매개변수를 이용하는 방법
+arr.find(function (p) {
+    return p.id === this.id
+}, juliet);                         // juliet Object
+```
+
+이렇게 간단한 예제에서는 `find`와 `findIndex`에서 `this` 값을 바꾸는 의미가 별로 없지만, 나중에 이 방법이 더 유용하게 쓰이는 경우를 보게 될 겁니다.
+
+간혹 조건을 만족하는 요소의 인덱스도, 요소 자체도 필요 없고, 조건을 만족하는 요소가 있는지 없는지만 알면 충분할 때가 있습니다. 물론 앞에서 설명한 함수를 사용하고 -1이나 `null`이 반환되는지 확인해도 되지만, 자바스크립트에는 이럴 때 쓰라고 만든 `some`과 `every` 메서드가 있습니다.
+
+`some`은 조건에 맞는 요소를 찾으면 즉시 검색을 멈추고 `true`를 반환하며, 조건에 맞는 요소를 찾지 못하면 `false`를 반환합니다.
+
+```javascript
+const arr = [5, 12, 7, 9, 15];
+
+arr.some(x => x % 2 === 0);  
+// true; 12는 짝수입니다.
+
+arr.some(x => Number.isInteger(Math.aqrt(x)));
+// false; 제곱수가 없습니다.
+```
+
+`every`는 
