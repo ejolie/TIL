@@ -14,7 +14,9 @@
 
 ### 1) [Learning JavaScript](javascript/learning-javascript)
 
-### 2) [practice](javascript/practice)
+### 2) [Inside JavaScript](javascript/inside-javascript)
+
+### 3) [practice](javascript/practice)
 
 ## 5. Python
 
