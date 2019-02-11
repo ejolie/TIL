@@ -30,7 +30,7 @@
 
 
 
-
+&nbsp;
 
 ## 2. 시퀀스형/반복 가능한 자료형을 다루는 함수
 
@@ -210,7 +210,7 @@ x == list(x2) and y == list(y2)	# True
 
 
 
-
+&nbsp;
 
 ## 3. 변환 함수
 
@@ -299,7 +299,7 @@ float('-Infinity')		# inf
 
 
 
-
+&nbsp;
 
 ## 4. 기타
 
@@ -386,7 +386,7 @@ float('-Infinity')		# inf
 
 
 
-
+&nbsp;
 
 출처 : [SW Expert Academy] 파이썬 프로그래밍 기초(1) 파이썬의 기본 구조와 기초 문법 - 9. 내장함수, 파이썬 공식 문서 
 
