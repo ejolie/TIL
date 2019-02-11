@@ -215,7 +215,7 @@ SELECT name,
 FROM movies;
 ```
 
-
+* `AS` : Rename the long `CASE` statement.
 
 
 
@@ -258,3 +258,6 @@ CREATE TABLE celebs (
 );
 ```
 
+
+
+출처 : [Codecademy] Learn SQL
