@@ -52,7 +52,6 @@ def queens( arguments ):
 
 
 ```
-cols = [0] * (n+1)
 # 매개변수 level은 현재 노드의 위치를 표현하고,
 # 1번에서 level까지의 말이 어디에 놓였는지는
 # 전역변수 배열 cols로 표현한다.
@@ -63,6 +62,7 @@ cols = [0] * (n+1)
 # cols[level] : 1번 말부터 level 말까지 놓였음을 알 수 있으며 
 # level번 말이 어디에 놓였는지 알 수 있다.
 
+cols = [0] * (n+1)
 def queens( level ):
 	if non-promising:
 		report failure and return
@@ -70,5 +70,21 @@ def queens( level ):
 		report answer and return
 	else:
 		visit children recursively
+```
+
+
+
+```
+def queens( level ):
+	if !promising(level):
+		return false
+	else if level == N:
+		return true
+	# level+1번째 말을 각각의 열에 놓은 후 recursion을 호출한다.
+	for i in range(1, n+1):
+		cols[level + 1] = i
+		if queens(level + 1):
+			return true
+	return false
 ```
 

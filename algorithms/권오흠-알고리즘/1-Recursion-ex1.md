@@ -104,12 +104,17 @@ PATH_COLOR = 3		# visited이며 아직 출구로 가는 경로가 될 가능성�
 def findMazePath(x, y):	# 출발점
     if x < 0 or y < 0 or x >= N or y >= N:	# edge case
         return false
-    elif maze[x][y] != PATHWAY_COLOUR:
+    elif maze[x][y] != PATHWAY_COLOUR:		# visited(green, red) or wall(blue)
         return false
     elif x == N-1 and y == N-1:				# finish point
-        maze[x][y] = PATH_COLOUR
+        maze[x][y] = PATH_COLOUR			# mark visited(green)
+        return true
     else:
-        maze[x][y]
+        maze[x][y] = PATH_COLOUR			# mark visited(green)
+        if findMazePath(x-1, y) or findMazePath(x, y+1) or findMazePath(x+1, y) or findMazePath(x, y-1):
+            return true
+       	maze[x][y] = BLOCKED_COLOUR;		# mark dead end
+        return false
     
 findMazePath(0, 0)
 ```
