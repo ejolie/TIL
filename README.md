@@ -22,6 +22,6 @@ docsify serve docs
 ```
 
 ## Deploy
-I recommend you to read a official document of [docsify.js](https://docsify.js.org/#/deploy).
+I recommend you to read an official document of [docsify.js](https://docsify.js.org/#/deploy).
 
 You can deploy files to GitHub Pages, Netlify, etc.
