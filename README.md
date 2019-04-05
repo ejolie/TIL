@@ -3,4 +3,4 @@
 
 This repository is for the things I learned today.
 
-I made a web page for this repo that was made by [docsify.js](https://docsify.js.org/#/) and deployed by [netlify](https://todayejlearned.netlify.com).
+I made a web page for this repo, which was made by [docsify.js](https://docsify.js.org/#/) and deployed by [netlify](https://todayejlearned.netlify.com).
