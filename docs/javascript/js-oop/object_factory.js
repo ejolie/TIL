@@ -36,6 +36,8 @@ function Person(name, first, second, third) {
 }
 var kim = new Person('kim', 10, 20, 30);
 var lee = new Person('lee', 10, 10, 10);
+console.log("kim.sum()", kim.sum());
+console.log("lee.sum()", lee.sum());
 
 console.log("Person()", Person()); // 그냥 함수
 console.log("new Person()", new Person()); // 객체 생성자(contructor)
