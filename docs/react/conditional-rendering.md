@@ -1,6 +1,6 @@
 2019년 4월 12일 금요일
 
-# 조건부 렌더링
+# 조건부 렌더링 {docsify-ignore-all}
 
 React에서 조건부 렌더링은 자바스크립트에서의 조건 처리와 같이 동작합니다. 
 
@@ -218,3 +218,5 @@ ReactDOM.render(
 ```
 
 컴포넌트의 `render` 메서드로부터 `null`을 반환하는 것은 생명주기 메서드 호출에 영향을 주지 않습니다. 그 예로 `componentDidUpdate`는 계속해서 호출되게 됩니다.
+
+출처 : https://reactjs-kr.firebaseapp.com/docs/conditional-rendering.html

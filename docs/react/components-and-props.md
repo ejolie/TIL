@@ -1,6 +1,6 @@
 2019년 4월 12일 금요일
 
-# 컴포넌트와 Props
+# 컴포넌트와 Props {docsify-ignore-all}
 
 컴포넌트를 통해 UI를 재사용 가능한 개별적인 여러 조각으로 나눌 수 있습니다.
 
@@ -107,3 +107,5 @@ function sum(a, b) {
 **모든 React 컴포넌트는 자신의 props를 다줄 때 반드시 순수 함수처럼 동작해야 합니다.**
 
 React 컴포넌트는 state를 통해 위 규칙을 위반하지 않고 사용자 액션, 네트워크 응답 및 다른 요소에 대한 응답으로 시간에 따라 자신의 출력값을 변경할 수 있습니다.
+
+출처 : https://reactjs-kr.firebaseapp.com/docs/components-and-props.html

@@ -1,6 +1,6 @@
 2019년 4월 12일 금요일
 
-# 이벤트 처리하기
+# 이벤트 처리하기 {docsify-ignore-all}
 
 React 엘리먼트에서 이벤트를 처리하는 방식은 DOM 엘리먼트에서 이벤트를 처리하는 방식과 매우 유사합니다. 몇 가지 문법적인 차이는 다음과 같습니다.
 
@@ -164,3 +164,5 @@ class LoggingButton extends React.Component {
 ```
 
 위 두 줄은 동등합니다. 두 경우 모두 React 이벤트를 나타내는 e 인자가 id 뒤에 두 번째 인자로 전달됩니다. 
+
+출처 : https://reactjs-kr.firebaseapp.com/docs/handling-events.html

@@ -1,6 +1,12 @@
 2019년 4월 12일 금요일
 
-# JSX / ES5 / ES6 ???
+# JSX (JavaScript eXtension) {docsify-ignore-all}
+
+JSX : 자바스크립트 기반, React "엘리먼드"를 만드는 언어 
+
+과거 패러다임에서는 자바스크립트와 마크업 언어를 같은 곳에서 작성하는 것이 나쁜 습관으로 여겨졌습니다. 하지만 이제는 기능(함수, 동작)과 화면(뷰)를 결합하는 것이 화면에 대한 추론을 직관적으로 만듭니다.
+
+## JSX / ES5 / ES6 ???
 
 ### ES5
 
@@ -16,13 +22,6 @@ ES6은 2015년에 나온 자바스크립트의 새로운 버전이며 ES5에 비
 
 1. *Transpile* : ES6 -> ES5
 2. Include a *shim* or *polyfill*
-
-
-# JSX (JavaScript eXtension)
-
-JSX : 자바스크립트 기반, React "엘리먼드"를 만드는 언어 
-
-과거 패러다임에서는 자바스크립트와 마크업 언어를 같은 곳에서 작성하는 것이 나쁜 습관으로 여겨졌습니다. 하지만 이제는 기능(함수, 동작)과 화면(뷰)를 결합하는 것이 화면에 대한 추론을 직관적으로 만듭니다.
 
 
 ## 표현식(expression) 사용하기
@@ -250,3 +249,5 @@ class App extends React.Component {
 	}
 }
 ```
+
+출처 : https://reactjs-kr.firebaseapp.com/docs/introducing-jsx.html

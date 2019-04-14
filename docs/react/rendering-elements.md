@@ -1,6 +1,6 @@
 2019년 4월 12일 금요일
 
-# 엘리먼트 렌더링
+# 엘리먼트 렌더링 {docsify-ignore-all}
 
 엘리먼트 : React 앱의 가장 작은 단위
 
@@ -54,3 +54,5 @@ setInterval(tick, 1000);
 ## 변경된 부분만 업데이트하기
 
 ReactDOM은 해당 엘리먼트와 그 자식 엘리먼트를 이전의 엘리먼트와 비교하교 필요한 경우에만 DOM을 업데이트합니다.
+
+출처 : https://reactjs-kr.firebaseapp.com/docs/rendering-elements.html

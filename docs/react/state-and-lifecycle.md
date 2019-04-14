@@ -1,6 +1,6 @@
 2019년 4월 12일 금요일
 
-# State와 라이프사이클
+# State와 라이프사이클 {docsify-ignore-all}
 
 State는 props와 비슷하지만 컴포넌트에 의해 완전히 제어되며 private 속성입니다.
 
@@ -239,3 +239,5 @@ React 컴포넌트는 다른 컴포넌트의 state나 해당 컴포넌트가 함
 모든 state는 항상 특정 컴포넌트가 가지며, 해당 state에서 파생된 모든 데이터 또는 UI는 트리의 컴포넌트 “아래(below)“에만 영향을 미칩니다.
 
 컴포넌트 트리 = `props`의 폭포
+
+출처 : https://reactjs-kr.firebaseapp.com/docs/state-and-lifecycle.html
