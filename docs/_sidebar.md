@@ -5,6 +5,9 @@
 
 - :lemon: JavaScript
 
+- :nail_care: CSS, Sass
+  - [Sass 문법](/css-sass/sass-syntax.md)
+
 - :peach: React
   - [JSX 소개](/react/introducing-jsx.md)
   - [엘리먼트 렌더링](/react/rendering-elements.md)
