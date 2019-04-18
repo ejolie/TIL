@@ -1,6 +1,6 @@
 2019년 4월 7일 일요일
 
-# 클로저와 스코프 체인
+# 클로저와 스코프 체인 {docsify-ignore-all}
 
 ```javascript
 function outer() {
@@ -104,3 +104,5 @@ someFunc();
 생성한 시점의 스코프 체인을 계속 들고 있는다.
 outer() 실행 이후에도 inner가 outer에 대한 스코프를 들고 있고
 글로벌에서도 이 outer에 대한 스코프를 들고 있고 여기에 접근할 수 있다.
+
+출처 : 유튜브 코드종

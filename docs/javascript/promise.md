@@ -1,6 +1,6 @@
 2019년 4월 7일 일요일
 
-# Promise
+# Promise {docsify-ignore-all}
 
 콜백 지옥을 탈출하게 해주는 Promise
 
@@ -99,4 +99,4 @@ undefined
 ```
 아무것도 리턴하지 않아도 결국 then의 리턴 값은 resolve가 된 프라미스
 
-출처 : 코드종
+출처 : 유튜브 코드종
