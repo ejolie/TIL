@@ -2,6 +2,8 @@
 
   - [git pull/push 때 비밀번호 입력 안 뜨게 하는 법](/git/credential-caching.md)
 
+  - [git 전역 설정, 확인, 삭제하기](/git/git-config.md)
+
 - :nail_care: CSS, Sass
 
   - [CSS 선택자(Selector)](/css-sass/css-selector.md)
@@ -16,7 +18,7 @@
 
   - [클로저와 스코프 체인](/javascript/closure-scope-chain.md)
 
-  - [동기와 비동기 콜백함수](/javascript/sync-async-callback.md)
+  - [콜백 함수의 두 가지 동작](/javascript/sync-async-callback.md)
 
   - [ES6 화살표 함수에 없는 세 가지](/javascript/arrow-function.md)
 

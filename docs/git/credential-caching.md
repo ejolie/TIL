@@ -1,6 +1,6 @@
 2019년 4월 15일 월요일 
 
-# git push 때 비밀번호 입력 안 뜨게 하는 법 {docsify-ignore-all}
+# git push 때 비밀번호 입력 안 뜨게 하는 법 
 
 만약 HTTP를 사용하는 Github repo를 사용하고 있다면 credential helper를 이용해 Github 유저네임과 패스워드를 기억하게 만들 수 있다.
 

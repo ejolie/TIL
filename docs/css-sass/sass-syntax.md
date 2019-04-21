@@ -1,6 +1,6 @@
 2019년 4월 15일 월요일
 
-# Sass 문법 {docsify-ignore-all}
+# Sass 문법
 
 ## 문자열
 

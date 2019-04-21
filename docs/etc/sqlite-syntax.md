@@ -1,6 +1,6 @@
 2019년 1월 29일 화요일
 
-# SQLite 문법 {docsify-ignore-all}
+# SQLite 문법
 
 ## 1. Create
 ```sql

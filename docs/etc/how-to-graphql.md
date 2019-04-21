@@ -1,6 +1,6 @@
 2019년 4월 5일 금요일
 
-# How to GraphQL {docsify-ignore-all}
+# How to GraphQL
 
 ## 1. 소개
 

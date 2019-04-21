@@ -1,6 +1,6 @@
 2019년 1월 24일 목요일
 
-# CSS 선택자(Selector) {docsify-ignore-all}
+# CSS 선택자(Selector) 
 
 ## 1. 연결 선택자
 

@@ -1,6 +1,6 @@
 2019년 2월 10일 일요일
 
-# ⚠️ Unhandled 'error' event {docsify-ignore-all}
+# ⚠️ Unhandled 'error' event
 쉘에서 `node src` 명령어를 통해 node 서버를 실행하고자 할 때 다음과 같은 에러가 발생할 때가 있습니다.
 
 ```bash

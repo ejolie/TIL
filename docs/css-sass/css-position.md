@@ -1,6 +1,6 @@
 2019년 1월 24일 목요일
 
-# CSS Potition {docsify-ignore-all}
+# CSS Potition
 
 position 속성은 웹 문서 안의 요소들을 자유롭게 배치해주는 속성입니다.
 

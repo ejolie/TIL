@@ -1,6 +1,6 @@
 2019년 4월 12일 금요일
 
-# State와 라이프사이클 {docsify-ignore-all}
+# State와 라이프사이클
 
 State는 props와 비슷하지만 컴포넌트에 의해 완전히 제어되며 private 속성입니다.
 

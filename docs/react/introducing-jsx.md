@@ -1,6 +1,6 @@
 2019년 4월 12일 금요일
 
-# JSX (JavaScript eXtension) {docsify-ignore-all}
+# JSX (JavaScript eXtension)
 
 JSX : 자바스크립트 기반, React "엘리먼드"를 만드는 언어 
 
