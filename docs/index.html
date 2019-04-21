@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <title>TIL | Eunjeong Park</title>
@@ -18,20 +18,18 @@
         el: "#app",
         name: "Today I Learned",
         repo: "https://github.com/ejolie/TIL/",
-        auto2top: true,
-        loadSidebar: true,
-        maxLevel: 4,
-        subMaxLevel: 2,
-        alias: {
-          "/.*/_sidebar.md": "/_sidebar.md"
-        },
         coverpage: true,
+        loadSidebar: true,
+        loadNavbar: true,
+        alias: {
+          '/.*/_sidebar.md': '/_sidebar.md',
+          '/.*/_navbar.md': '/_navbar.md',
+        },
         ga: 'UA-138564211-1'
       };
     </script>
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-    <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
-    <script src="//unpkg.com/docsify/lib/docsify.min.js" data-ga="UA-138564211-1"></script>
     <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js" data-ga="UA-138564211-1"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
   </body>
 </html>
