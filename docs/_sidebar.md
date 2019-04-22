@@ -8,6 +8,8 @@
 
   - [HTTP 프로토콜이란?](/web/http-protocol.md)
 
+  - [브라우저의 동작](/web/browser.md)
+
 - :nail_care: CSS, Sass
 
   - [CSS 선택자(Selector)](/css-sass/css-selector.md)
