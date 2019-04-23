@@ -38,4 +38,7 @@ You can deploy files to GitHub Pages, Netlify, etc.
 
 ## Screenshot
 
-<img src="./main.png" alt="TIL main screenshot" width="700">
+<img src="./assets/main.png" alt="TIL - main" width="800">
+
+<img src="./assets/detail.png" alt="TIL - detail" width="800">
+
