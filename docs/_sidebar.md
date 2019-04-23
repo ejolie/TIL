@@ -6,9 +6,9 @@
 
 - :globe_with_meridians: Web
 
-  - [HTTP 프로토콜이란?](/web/http-protocol.md)
+  - [[부스트코스] HTTP 프로토콜이란?](/web/http-protocol.md)
 
-  - [브라우저의 동작](/web/browser.md)
+  - [[부스트코스] 브라우저의 동작](/web/browser.md)
 
 - :nail_care: CSS, Sass
 
@@ -31,6 +31,12 @@
   - [ES6 프로미스](/javascript/promise.md)
 
   - [자바스크립트 Intro](/javascript/190422.md)
+
+  - [[부스트코스] 자바스크립트 변수, 연산자, 타입](/javascript/boost-variable.md)
+
+  - [[부스트코스] 자바스크립트 비교, 반복, 문자열](/javascript/boost-control.md)
+
+  - [[부스트코스] 자바스크립트 함수](/javascript/boost-function.md)
 
 - :peach: React
 
