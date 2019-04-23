@@ -54,6 +54,14 @@
 
   - [리스트와 키](/react/lists-and-keys.md)
 
+  - [폼](/react/forms.md)
+
+  - [비제어 컴포넌트](/react/uncontrolled-component.md)
+
+  - [State 올리기](/react/lifting-state-up.md)
+
+  - [합성(Composition) vs 상속(Inheritance)](/react/composition-vs-inheritance.md)
+
 - :green_apple: Vue
 
 - :snake: Python
