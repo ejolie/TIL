@@ -18,7 +18,7 @@
   - [콜백 함수의 두 가지 동작](/javascript/sync-async-callback.md)
   - [ES6 화살표 함수에 없는 세 가지](/javascript/arrow-function.md)
   - [ES6 프로미스](/javascript/promise.md)
-  - [자바스크립트 Intro](/javascript/190422.md)
+  - [자바스크립트의 static 이해하기](/javascript/static.md)
 
   - 인사이드 자바스크립트
     - [객체지향 프로그래밍](/javascript/insidejs-oop.md)
