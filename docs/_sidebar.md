@@ -16,6 +16,7 @@
   - [Sass 문법](/css-sass/sass-syntax.md)
 
 - :lemon: JavaScript
+
   - [타이머와 싱글 스레드의 관계](/javascript/timer-thread.md)
   - [클로저와 스코프 체인](/javascript/closure-scope-chain.md)
   - [콜백 함수의 두 가지 동작](/javascript/sync-async-callback.md)
@@ -28,7 +29,7 @@
   - 인사이드 자바스크립트
     - [객체지향 프로그래밍](/javascript/insidejs-oop.md)
     - [함수와 프로토타입 체이닝](/javasciprt/insidejs-function.md)
-  - [프로토타입](/javascript/insidejs-prototype.md)
+    - [프로토타입](/javascript/insidejs-prototype.md)
   - 러닝 자바스크립트
     - [비교 연산자](/javascript/learningjs-compare-ops.md)
     - [논리 연산자](/javascript/learningjs-logical-ops.md)
@@ -38,11 +39,10 @@
     - [call, apply, bind](/javascript/learningjs-call-apply-bind.md)
     - [배열 요소 조작](/javascript/learningjs-array-manipulation.md)
     - [객체와 객체지향 프로그래밍](/javascript/learningjs-object.md)
-- 부스트코스 : 웹 프로그래밍
-
-  - [변수, 연산자, 타입](/javascript/boost-variable.md)
-  - [비교, 반복, 문자열](/javascript/boost-control.md)
-  - [함수](/javascript/boost-function.md)
+  - 부스트코스 : 웹 프로그래밍
+    - [변수, 연산자, 타입](/javascript/boost-variable.md)
+    - [비교, 반복, 문자열](/javascript/boost-control.md)
+    - [함수](/javascript/boost-function.md)
 
 - :peach: React
 
