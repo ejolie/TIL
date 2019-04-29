@@ -19,7 +19,7 @@
   - [ES6 화살표 함수에 없는 세 가지](/javascript/arrow-function.md)
   - [ES6 프로미스](/javascript/promise.md)
   - [자바스크립트의 static 이해하기](/javascript/static.md)
-- [forEach에 대해 당신이 몰랐던 세 가지](/javascript/3things-about-forEach.md)
+  - [forEach에 대해 당신이 몰랐던 세 가지](/javascript/3things-about-forEach.md)
   - [순수 자바스크립트 함수로 Lodash 대체하기](/javascript/replacing-lodash-by-js.md)
   - 인사이드 자바스크립트
     - [객체지향 프로그래밍](/javascript/insidejs-oop.md)
