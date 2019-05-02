@@ -43,7 +43,10 @@
     - [변수, 연산자, 타입](/javascript/boost-variable.md)
     - [비교, 반복, 문자열](/javascript/boost-control.md)
     - [함수](/javascript/boost-function.md)
-
+  - You Don't Know JS : this & Object Prototypes
+    - [this OR That?](./javascript/ydkj-3-1.md)
+    - [this All Makes Sense Now!](./javascript/ydkj-3-2.md)
+  
 - :peach: React
 
   - [양방향 데이터 바인딩](/react/2way-data-binding.md)
