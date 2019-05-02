@@ -77,3 +77,6 @@ baz(); // <-- `baz`의 call-site
 
 
 
+
+
+출처 : [https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md](https://github.com/getify/You-Dont-Know-JS/blob/master/this %26 object prototypes/ch2.md)
