@@ -46,10 +46,13 @@
   - You Don't Know JS : this & Object Prototypes
     - [this OR That?](./javascript/ydkj-3-1.md)
     - [this All Makes Sense Now!](./javascript/ydkj-3-2.md)
-  
+
 - :peach: React
 
   - [양방향 데이터 바인딩](/react/2way-data-binding.md)
+
+    <!-- - [리액트 컴포넌트 타입](/react/react-component-types.md) -->
+
   - 공식 문서
     - [JSX 소개](/react/introducing-jsx.md)
     - [엘리먼트 렌더링](/react/rendering-elements.md)
