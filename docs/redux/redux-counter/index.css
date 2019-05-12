@@ -1,0 +1,22 @@
+.switch {
+  padding: 1rem;
+  background: black;
+}
+
+.switch .light {
+  background: gray;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 2rem;
+}
+
+.switch button {
+  margin-top: 1rem;
+
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
+}
+
+.counter h1 {
+  margin-bottom: 0rem;
+}
