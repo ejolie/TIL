@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+  </head>
+  <body>
+    <div id="subject"></div>
+    <div id="toc"></div>
+    <div id="control"></div>
+    <div id="content"></div>
+
+    <script>
+      // 부품화, 모듈화
+      function subject() {
+        document.querySelector("#subject").innerHTML = `
+          <header>
+            <h1>Web</h1>
+            Hello, WEB!
+          </header>
+        `;
+      }
+
+      function TOC() {
+        const state = store.getState();
+        let liTags = "";
+        for (let i = 0; i < state.contents.length; i++) {
+          liTags += `
+            <li>
+              <a href="${state.contents[i].id}">${state.contents[i].title}</a>
+            </li>
+          `;
+        }
+        document.querySelector("#toc").innerHTML = `
+          <nav>
+            <ol>
+              ${liTags}
+            </ol>
+          </nav>
+        `;
+      }
+
+      function control() {
+        document.querySelector("#control").innerHTML = `
+          <ul>
+            <li><a href="/create">create</a></li>
+            <li><input type="button" value="delete" /></li>
+          </ul>
+        `;
+      }
+
+      function content() {
+        document.querySelector("#content").innerHTML = `
+          <article>
+            <h2>HTML</h2>
+            HTML is ...
+          </article>
+        `;
+      }
+
+      function reducer(state, action) {
+        if (state === undefined) {
+          return {
+            contents: [
+              { id: 1, title: "HTML", description: "HTML is..." },
+              { id: 2, title: "CSS", description: "CSS is..." }
+            ]
+          };
+        }
+        return newState;
+      }
+
+      const store = Redux.createStore(reducer);
+      subject();
+      TOC();
+      control();
+      content();
+    </script>
+  </body>
+</html>
