@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+  </head>
+
+  <body>
+    <style>
+      .container {
+        border: 5px solid black;
+        padding: 10px;
+      }
+    </style>
+    <div id="red"></div>
+    <div id="blue"></div>
+    <div id="green"></div>
+    <script>
+      // reducer : store의 state의 값을 변경
+      // action의 값과 이전의 state값을 이용해서 새로운 state값을 리턴해주면 된다.
+      // 리턴값은 이전 값을 그대로 사용하지않고 이전 값을 복제해서 리턴해준다.
+      // 따라서 변경된 각각의 state는 독립된 data이다. 원래 state의 불변성을 유지한다.
+      function reducer(state, action) {
+        console.log(state, action);
+
+        if (state === undefined) {
+          return { color: "yellow" };
+        }
+        var newState;
+        if (action.type === "CHANGE_COLOR") {
+          newState = Object.assign({}, state, { color: action.color });
+        }
+
+        console.log(action.type, action, state, newState);
+
+        return newState;
+      }
+
+      var store = Redux.createStore(
+        reducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSION__()
+      );
+
+      function red() {
+        var state = store.getState();
+        document.querySelector("#red").innerHTML = `
+        <div class="container" id="component_red" style="background-color:${
+          state.color
+        }">
+            <h1>red</h1>
+            <input type="button" value="fire" onclick="
+                store.dispatch({type:'CHANGE_COLOR', color:'red'});
+            ">
+        </div>
+    `;
+      }
+      // state 값이 바뀔 때마다 red 함수가 호출된다.
+      store.subscribe(red);
+      red();
+
+      function blue() {
+        var state = store.getState();
+        document.querySelector("#blue").innerHTML = `
+        <div class="container" id="component_blue" style="background-color:${
+          state.color
+        }">
+            <h1>blue</h1>
+            <input type="button" value="fire" onclick="
+                store.dispatch({type:'CHANGE_COLOR', color:'blue'});
+            ">
+        </div>
+    `;
+      }
+      store.subscribe(blue);
+      blue();
+
+      function green() {
+        var state = store.getState();
+        document.querySelector("#green").innerHTML = `
+        <div class="container" id="component_green" style="background-color:${
+          state.color
+        }">
+            <h1>green</h1>
+            <input type="button" value="fire" onclick="
+                store.dispatch({type:'CHANGE_COLOR', color:'green'});
+            ">
+        </div>
+    `;
+      }
+      store.subscribe(green);
+      green();
+    </script>
+  </body>
+</html>
