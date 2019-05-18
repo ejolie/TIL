@@ -7,7 +7,6 @@
 
   - 부스트코스 : 웹 프로그래밍
     - [HTTP 프로토콜이란?](/web/boost-http-protocol.md)
-    - [브라우저의 동작](/web/boost-browser.md)
 
 - :nail_care: CSS, Sass
 
@@ -66,7 +65,14 @@
     - [State 올리기](/react/lifting-state-up.md)
     - [합성(Composition) vs 상속(Inheritance)](/react/composition-vs-inheritance.md)
 
+- :package: Redux
+
+  - 생활코딩
+    - [Redux 소개](/redux/ot-redux/ot-redux-1.md)
+
 - :green_apple: Vue
+
+  - [Vue.js 입문서](/vue/intro.md)
 
 - :snake: Python
 
@@ -75,6 +81,10 @@
   - [파이썬 모듈](/python/modules.md)
 
 - :tangerine: Django
+
+  - [Django 가상환경 설정과 주요 명령어](/django/django-commands.md)
+  - [Django 표준 CRUD와 RESTful API](/django/django-crud-rest.md)
+  - [Django ORM](/django/django-orm.md)
 
 - :thought_balloon: etc.
   - [[Node.js] Unhandled 'error' event 에러 해결방법](/etc/node-listen-error.md)

@@ -1,0 +1,61 @@
+<html>
+  <body>
+    <style>
+      .container {
+        border: 5px solid black;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      body {
+        margin: 1rem;
+      }
+    </style>
+    <h1>Without redux</h1>
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="blue"></div>
+
+    <script>
+      function red() {
+        document.querySelector("#red").innerHTML = `
+        <div class="container" id="component_red" style="background-color:yellow">
+            <h1>red</h1>
+            <input type="button" value="fire" onclick="
+            document.querySelector('#component_red').style.backgroundColor = 'red';
+            document.querySelector('#component_green').style.backgroundColor = 'red';
+            document.querySelector('#component_blue').style.backgroundColor = 'green';
+            ">
+        </div>
+    `;
+      }
+      red();
+      function green() {
+        document.querySelector("#green").innerHTML = `
+        <div class="container" id="component_green" style="background-color:yellow">
+            <h1>green</h1>
+            <input type="button" value="fire" onclick="
+            document.querySelector('#component_red').style.backgroundColor = 'green';
+            document.querySelector('#component_green').style.backgroundColor = 'green';
+            document.querySelector('#component_blue').style.backgroundColor = 'green';
+            ">
+        </div>
+    `;
+      }
+      green();
+      function blue() {
+        document.querySelector("#blue").innerHTML = `
+        <div class="container" id="component_blue" style="background-color:yellow">
+            <h1>blue</h1>
+            <input type="button" value="fire" onclick="
+            document.querySelector('#component_red').style.backgroundColor = 'blue';
+            document.querySelector('#component_green').style.backgroundColor = 'blue';
+            document.querySelector('#component_blue').style.backgroundColor = 'blue';
+            ">
+        </div>
+    `;
+      }
+      blue();
+    </script>
+  </body>
+</html>
