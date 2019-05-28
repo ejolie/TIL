@@ -131,12 +131,115 @@ module.exports = {
 
 ### 시작하기
 
+#### 1. 설치
+
 ```bash
 npm install antd styled-components @types/styled-components
 ```
 
+#### 2. antd css import
+
+ts 파일에서 import 해서 작업하는게 용이해서 index.ts 파일도 만듦
+
+```
+- styled/
+  - less/
+    - index.less
+  - index.ts
+```
+
+```less
+// index.less
+@import "~antd/dist/antd.less";
+```
+
+```ts
+// index.ts
+import "./less/index.less";
+```
+
+#### 3. error
+
+antd의 문제
+
+less loader에 inline을 enable해줘야 함
+
+less는 동적으로 변수를 받아 주입할 수 있는 시스템이 있어서
+
+```js
+// craco.config.js
+const CracoLessPlugin = require("craco-less");
+
+module.exports = {
+  plugins: [
+    {
+      plugin: CracoLessPlugin,
+      options: {
+        lessLoaderOptions: {
+          javascriptEnabled: true
+        }
+      }
+    }
+  ]
+};
+```
+
+### 로그인 폼 만들기
+
+antd는 form validation이 훌륭
+
+## 3-2. Markdown
+
+### 시작하기
+
+#### 1. 마크다운 패키지 설치
+
+react-markdown vs markdown-to-jsx
+
+- 패키지 선택 기준
+  - dependency가 적어야 좋음
+  - 다운로드 추이
+
+```bash
+npm install markdown-to-jsx @types/markdown-to-jsx
+```
+
+#### 2. raw loader 설치 및 설정
+
+```bash
+npm install craco-raw-loader
+```
+
+```js
+// craco.config.js
+const rawLoader = require("craco-raw-loader");
+
+module.exports = {
+  plugins: [
+    {
+      plugin: rawLoader,
+      options: {
+        test: /\.(md|txt)$/
+      }
+    }
+  ]
+};
+```
+
 ## 4. Style and Theme in React.JS
 
+### Flexbox
+
+- direction : column과 row
+  - row : flexbox 안의 아이템들이 좌에서 우로
+  - column : flexbox 안의 아이템들이 위에서 아래로
+- justify
+- align
+
+
+
 ## 5. 효율적인 코드 작성 (destructuring, async, await)
+
+
 
 ## 6. Drag & Resizing (Resizing, ellipsis)

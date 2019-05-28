@@ -1,0 +1,3 @@
+[submodule "docs/react/fb-react-bootcamp/day2/react-fed"]
+	path = docs/react/fb-react-bootcamp/day2/react-fed
+	url = https://github.com/thomasjang/react-fed
