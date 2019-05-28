@@ -1,0 +1,13 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.container > div {
+  flex: 1; /* width: 33.3333% */
+  /* flex-grow, flex-shrink, flex-basis */
+}
+
+.search {
+  flex: 2;
+}

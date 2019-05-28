@@ -1,0 +1,32 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.search {
+  flex: 1;
+}
+
+@media all and (max-width: 600px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .container > li {
+    flex: 1 1 50%; /* each column 1/2 in a row */
+  }
+
+  .search > input {
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .container > li {
+    flex: 1 1 100%; /* each column 1 in a row */
+  }
+
+  .search {
+    order: 1; /* last position */
+  }
+}

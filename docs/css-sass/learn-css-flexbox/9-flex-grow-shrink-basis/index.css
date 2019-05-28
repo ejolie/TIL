@@ -1,0 +1,35 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.home {
+  /* flex: 1 1 0;  */
+
+  /* flex: 1 */
+
+  /* flex-grow: 1 */
+  /* flex-shrink: 1 */
+  /* flex-basis: 1 */
+
+  flex-grow: 0;
+  flex-shrink: 0;
+  /* flex-shrink: 5; */
+  flex-basis: 200px;
+}
+
+.logout {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 200px;
+}
+
+/*
+.home {
+  flex: 1 1 200px;
+}
+
+.logout {
+  flex: 10 1 200px;
+}
+*/

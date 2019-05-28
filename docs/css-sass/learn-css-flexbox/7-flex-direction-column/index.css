@@ -1,0 +1,8 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* 이거 안하면 justify-content 적용 X */
+  justify-content: flex-end;
+  align-items: flex-end;
+}

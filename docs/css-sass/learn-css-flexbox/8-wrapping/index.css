@@ -1,0 +1,10 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-wrap: wrap;
+  /* multiline (default: nowrap - singleline) */
+}
+
+.container > div {
+  width: 300px;
+}

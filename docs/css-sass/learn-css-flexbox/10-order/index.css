@@ -1,0 +1,19 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+/* default order: 0 */
+/* -1, 0, 1, ... */
+
+.item1 {
+  order: 1;
+}
+
+.item2 {
+  order: 0;
+}
+
+.item3 {
+  order: -1;
+}
