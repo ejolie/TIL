@@ -12,7 +12,7 @@ jsdev.kr
 
 React Korea - 6/22 Meetup 예정
 
-## Why: React
+## 1. Why: React
 
 ### SPA
 
@@ -42,7 +42,7 @@ React Korea - 6/22 Meetup 예정
 
 ### React 시작하기
 
-1. CRA (Create React App)
+#### 1. CRA (Create React App)
 
 ```bash
 npx create-react-app my-app
@@ -50,7 +50,7 @@ npx create-react-app my-app
 
 CRA는 기본이자 사실상 표준, 현업에서도 많이 사용한다.
 
-2. Next.js by zeit
+#### 2. Next.js by zeit
 
 ```bash
 npm install next react react-dom
@@ -71,7 +71,7 @@ npm init
 - 단점
   - 페이지 라우팅을 강제하여 유연하게 만들기 힘듦
 
-3. Self eject from CRA
+#### 3. Self eject from CRA
 
 ```bash
 npm run eject
@@ -79,7 +79,7 @@ npm run eject
 
 eject하여 Webpack 설정을 바꿔 사용할 수 있다. 단점은 CRA의 추후 업데이트 사항을 적용할 수 없다.
 
-## React의 특성: 구조, 렌더링, 라이프 사이클
+## 2. React의 특성: 구조, 렌더링, 라이프 사이클
 
 ### JSX (JavaScript eXtension)
 
@@ -99,7 +99,7 @@ eject하여 Webpack 설정을 바꿔 사용할 수 있다. 단점은 CRA의 추�
 
 이 부분이 가장 어려움. 반복적으로 학습해야 한다.
 
-## React 개발 스택: JS or TS? Redux or MobX?
+## 3. React 개발 스택: JS or TS? Redux or MobX?
 
 ### TypeScript
 
@@ -123,7 +123,7 @@ Props는 부모로부터만 전파되기 때문에, 모든 상태를 부모로�
 
 따라서, 앱의 전역적 상태관리를 필요로 하게 됨
 
-#### Redux
+#### 1) Redux
 
 Flux 패턴
 Event driven
@@ -132,19 +132,19 @@ Event driven
   - 액션 코드와 액션에 대한 반응인 리듀서 코드가 많이 필요함. 그에 따른 피로감
   - 혼자서는 못 쓰고 middleware 필요 (saga, thunk, observable...)
 
-#### MobX
+#### 2) MobX
 
 Reactive Programming : 상태로부터 무언가를 일으킴
 
-## Styling: styled-components vs emotion vs jss
+## 4. Styling: styled-components vs emotion vs jss
 
-### Default
+### 1) Default
 
 인라인으로 만들려먼 camel case를 써야하므로 번거로움
 
-### styled-components
+### 2) styled-components
 
-### emotion
+### 3) emotion
 
 styled-components 보다 조금 더 진화함
 
@@ -154,13 +154,13 @@ styled-components와 호환이 쉬워서 요새 많이 사용
 
 컴포넌트가 어떤 스타일을 가졌는지 한 눈에 알기 쉬운 장점
 
-### JSS
+### 4) JSS
 
-## 프로젝트 폴더 구성: Components or Atomic
+## 5. 프로젝트 폴더 구성: Components or Atomic
 
 정답은 없다.
 
-### Components
+### 1) Components
 
 - Pages
 
@@ -181,7 +181,7 @@ styled-components와 호환이 쉬워서 요새 많이 사용
 
 - Actions
 
-### Atomic Design
+### 2) Atomic Design
 
 - Atoms
 
@@ -193,7 +193,7 @@ styled-components와 호환이 쉬워서 요새 많이 사용
 
 - Pages
 
-## 브라우저 라우팅: React Router
+## 6. 브라우저 라우팅: React Router
 
 웹 서비스는 url이 있고 url에 따라 뷰가 달라지는 것을 라우팅이라 한다.
 
@@ -201,17 +201,17 @@ styled-components와 호환이 쉬워서 요새 많이 사용
 
 ### React Router DOM
 
-#### Switch
+#### 1) Switch
 
 일치하는 첫 번째 것만 렌더링하고 나머지는 렌더링 하지 않는다.
 
 다 일치하지 않으면 NoMatch
 
-#### Link
+#### 2) Link
 
 로그인이 필요한 페이지에서 로그인으로 넘길 때 많이 사용
 
-#### withRouter
+#### 3) withRouter
 
 가장 많이 사용하는 것은 withRouter
 
@@ -223,7 +223,7 @@ withRouter로 컴포넌트를 감싸면 this.props 안에 match, location, histo
 
 - history : 코드로서 url을 조작해야 할 때 사용. Link를 많이 사용함.
 
-## Hot Module Replacement: React Hot Loader
+## 7. Hot Module Replacement: React Hot Loader
 
 ### HMR != live reload
 
@@ -235,7 +235,7 @@ js를 바꿔치기 해서 상태를 유지한 상태로 개발을 할 수 있는
 
 CRA 2.0부터 eject하지 않고 craco를 설치하여 HMR 사용 가능
 
-## 검색 엔진을 위한: SSR(Server-side rendering)
+## 8. 검색 엔진을 위한: SSR(Server-side rendering)
 
 ### SSR을 해야 하는 이유?
 
@@ -293,7 +293,7 @@ npx cra-universal start
 
 페이지 마다 `getInitialProps()` 라는 async한 메서드를 제공한다. 노드의 리퀘스트 형태. 이 메서드 안에서 Data Fetch 같은 async 작업을 수행하면 Props가 된다.
 
-## 배포하기: S3 / GitHub / Heroku / Zeit / Lambda / ECS
+## 9. 배포하기: S3 / GitHub / Heroku / Zeit / Lambda / ECS
 
 ### S3
 

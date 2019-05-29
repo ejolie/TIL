@@ -8,6 +8,8 @@ CHEQUER 장기영
 
 - 실습 프로젝트 : https://github.com/thomasJang/react-fed
 
+- 강의자료 : https://docs.google.com/presentation/d/1gSztygbf9YRwtmsdLDpDoPO2wk-QAOBOs6e6d45y3n0/edit?usp=sharing
+
 ## 1. CRA로 React-TS 프로젝트 시작하기
 
 - 공식 문서 : https://facebook.github.io/create-react-app/
