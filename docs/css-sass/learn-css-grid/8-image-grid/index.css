@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 75px;
+  grid-auto-flow: dense; /* row; */
+}
+
+.horizontal {
+  /* 1 / span 2 (X) => auto / span 2 (O) => span 2 (O) */
+  grid-column: span 2;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}

@@ -1,0 +1,17 @@
+/* 여백 공간 X, fit grid width */
+.container {
+  border: 1px solid black;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: 100px 100px;
+}
+
+/* 여백 공간 O, 창이 커질 때마다 안 보이는 새로운 column을 추가함 */
+.container2 {
+  border: 1px solid black;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-rows: 100px 100px;
+}
