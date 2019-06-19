@@ -1,36 +1,46 @@
-<script>const log = console.log</script>
+<script>
+  const log = console.log;
+</script>
 
+<!-- 
 # 일급 함수
  - 함수가 값으로 다뤄질 수 있다.
 
 # 고차 함수
  - 함수를 값으로 다루는 함수
 
-## 함수를 인자로 받아서 실행하는 함수
+## 함수를 인자로 받아서 실행하는 함수 (고차 함수 1)
  - apply1
  - times
 
-<script>
-  const apply1 = f => f(1);
-  const add2 = a => a + 2;
-  log(apply1(add2));
-  log(apply1(a => a - 1));
+-->
 
+<script>
+  const apply1 = (f) => f(1);
+  const add2 = (a) => a + 2;
+  log(apply1(add2));
+  log(apply1((a) => a - 1));
+
+  // Applicative programming
   const times = (f, n) => {
     let i = -1;
     while (++i < n) f(i);
   };
 
   times(log, 3);
-
-  times(a => log(a + 10), 3);
+  times((a) => a + 10, 3);
 </script>
 
-## 함수를 만들어 리턴하는 함수 (클로저를 만들어 리턴하는 함수)
- - addMaker
+<!-- 
+## 함수를 만들어 리턴하는 함수 (클로저를 만들어 리턴하는 함수) (고차 함수 2)
+ - addMaker  
+-->
 
 <script>
-  const addMaker = a => b => a + b;
+  // addMaker 함수가 실행되면 함수를 리턴한다.
+  // 클로저 : b => a + b라는 함수는 함수이자 a를 계속 기억하고 있는 클로저이다.
+  //⁄ 따라서, addMaker는 클로저를 리턴하는 함수다.
+  const addMaker = (a) => (b) => a + b;
   const add10 = addMaker(10);
   log(add10(5));
   log(add10(10));
