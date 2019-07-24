@@ -1,0 +1,72 @@
+# 4강. 기본자료형
+
+## 4-1. 기본자료형과 객체자료형
+
+- 기본자료형 : 데이터가 변수에 직접 저장됨.
+- 객체자료형 : 객체 메모리 주소가 변수에 저장됨.
+
+
+
+## 4-2. Java 기본자료형
+
+### 정수형
+
+- byte : 1byte
+- char : 2 byte
+- short : 2 byte
+- int : 4 byte
+- long : 8 byte
+
+
+
+### 실수형
+
+- float : 4 byte
+- double : 8 byte
+
+
+
+### 논리형
+
+- boolean : 1 byte
+
+
+
+String은 기본 자료형이 아님!
+
+
+
+## 4-3. 형 변환
+
+### 자동(암시적) 형 변환
+
+작은 공간의 메모리에서 큰 공간의 메모리로 이동
+
+```java
+byte by = 10;	// 1 byte
+int in = by;	// 4 byte
+System.out.println("in = " + in);
+```
+
+
+
+### 명시적 형 변환
+
+큰 공간의 메모리에서 작은 공간의 메모리로 이동
+
+```java
+int iVar = 100;			// 4 byte
+byte bVar = (byte)iVar;	// 1 byte
+System.out.println("bVar = " + bVar);
+```
+
+
+
+명시적 형 변환은 데이터가 누실될 수 있다.
+
+```java
+int iVar = 123456;		// 4 byte
+byte bVar = (byte)iVar;	// 1 byte
+System.out.println("bVar = " + bVar);	// 64
+```
+

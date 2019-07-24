@@ -1,0 +1,73 @@
+# 27강. 입력과 출력
+
+## 27-1. 입출력이란?
+
+- 입력 : 다른 곳의 데이터를 가져오는 것, 파일 읽기, 이미지&동영상 불러오기
+- 출력 : 다른 곳으로 데이터를 내보내는 것, 파일 쓰기, 이미지&동영상 내보내기
+
+- 스트림(Stream) : 데이터가 오고가는 길
+
+
+
+## 27-2. 입출력 기본 클래스
+
+입출력에 사용되는 기본 클래스는 1 byte 단위로 데이터를 전송하는 `InputStream`, `OutputStream` 이 있다(추상 클래스).
+
+
+
+### InputStream
+
+- `FileInputStream`
+- `DataInputStream`
+- `BufferedInputStream`
+
+
+
+### OutputStream
+
+- `FileOutputStream`
+- `DataOutputStream`
+- `BufferedOutputStream`
+
+
+
+
+
+## 27-3. `FileInputStream` / `FileOutputStream`
+
+파일에 데이터를 읽고 쓰기 위한 클래스로 `read()`, `write()` 메서드를 이용한다. byte 단위로 읽고 쓴다.
+
+
+
+### FileInputStream
+
+- `read()`
+- `read(byte[])`
+
+
+
+### FileOutputStream
+
+- `write(byte[] b)`
+- `write(byte[], int off, int len))`
+
+
+
+### 예시
+
+- `read()` : 1 byte 씩 읽고
+- `read(byte[])` : [] 크기(매개변수로 들어온 배열 크기)만큼 읽고
+- `write(byte[] b)` : 전체 쓰기
+- `write(byte[], int off, int len)` : off(시작점), len(길이)
+
+
+
+
+
+## 27-4.  `DataInputStream` / `DataOutputStream`
+
+byte 단위의 입출력을 개선해서 문자열을 좀 더 편리하게 다룰 수 있다.
+
+
+
+## 27-5. `BufferedReader` / `BufferedWriter`
