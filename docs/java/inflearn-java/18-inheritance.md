@@ -25,3 +25,9 @@ public class ChildClass extends ParentClass {
 }
 ```
 
+
+
+## 18-4. 부모 클래스의 `private` 접근자
+
+자식 클래스는 부모 클래스의 모든 자원을 사용할 수 있지만, `private` 접근자의 속성과 메서드는 사용할 수 없다.
+
