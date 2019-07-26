@@ -71,3 +71,6 @@ byte 단위의 입출력을 개선해서 문자열을 좀 더 편리하게 다�
 
 
 ## 27-5. `BufferedReader` / `BufferedWriter`
+
+byte 단위의 입출력을 개선해서 문자열을 좀 더 편리하게 다룰 수 있다.
+
