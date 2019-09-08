@@ -2,13 +2,12 @@
   const log = console.log;
 </script>
 
-<!--
 ## 기존과 달라진 ES6에서의 리스트 순회
- - for i++
- - for of
--->
+- for i++
+- for of
+
 <script>
-  // ES5
+  // - ES5
   const list = [1, 2, 3];
 
   for (var i = 0; i < list.length; i++) {
@@ -22,7 +21,9 @@
     log(str[i]);
   }
 
-  // ES6
+  // - ES6
+  // 보다 선언적으로 간결하게 순회
+  // 순회에 대한 추상화
   for (const a of list) {
     log(a);
   }
@@ -37,7 +38,12 @@
 <script>
   log('Arr -----------');
   const arr = [1, 2, 3];
-  for (const a of arr) log(a);
+  for (const a of arr) {
+    log(a);
+  }
+  // 1
+  // 2
+  // 3
 </script>
 
 ### Set을 통해 알아보기
@@ -45,7 +51,12 @@
 <script>
   log('Set -----------');
   const set = new Set([1, 2, 3]);
-  for (const a of set) log(a);
+  for (const a of set) {
+    log(a);
+  }
+  // 1
+  // 2
+  // 3
 </script>
 
 ### Map을 통해 알아보기
@@ -53,19 +64,152 @@
 <script>
   log('Map -----------');
   const map = new Map([['a', 1], ['b', 2], ['c', 3]]);
-  for (const a of map) log(a);
+  for (const a of map) {
+    log(a);
+  }
+  // ["a", 1]
+  // ["b", 2]
+  // ["c", 3]
 </script>
 
-<!--
-## 이터러블/이터레이터 프로토콜 
-  - 이터러블: 이터레이터를 리턴하는 [Symbol.iterator]() 를 가진 값 
-  - 이터레이터: { value, done } 객체를 리턴하는 next() 를 가진 값 
-  - 이터러블/이터레이터 프로토콜: 이터러블을 for...of, 전개 연산자 등과 함께 동작하도록한 규약 
+- Array는 원래 arr[0], arr[1] ... 이런 식으로 키(인덱스)로 값을 조회 할 수 있다.
+- 하지만 Set과 Map은 set[0], map[0] ... 이런 식으로 값을 조회 할 수 없다.
+- 그렇다면 for...of 문은 기존에 Array의 방식처럼 키에 대응하는 값을 가져오는 방식으로 구현된 게 아니라는 것이다.
+
+<script>
+  log(arr[Symbol.iterator]);
+  arr[Symbol.iterator] = null;
+  for (const a of arr) {
+    log(a);
+  }
+  // Uncaught TypeError: arr is not iterable
+  // -> Symbol.iterator와 for...of문이 연관이 있다는 사실을 알 수 있다.
+
+  log(set[Symbol.iterator]);
+  log(map[Symbol.iterator]);
+  // map과 set도 마찬가지로 Symbol.iterator에 구현된 메서드를 갖고 있다.
+</script>
+
+
+## 이터러블/이터레이터 프로토콜 (*굉장히 중요*)
+Array, Set, Map은 자바스크립트 내장 객체로서 이터러블/이터레이터 프로토콜을 따른다.
+
+- 이터러블: 이터레이터를 리턴하는 [Symbol.iterator]() 메서드를 가진 값
+Array, Set, Map은 이터러블이다.
+let iterator = arr[Symbol.iterator]();
+다음과 같이 이터러블 메서드를 실행하면 Array 이터레이터를 리턴한다.
+
+- 이터레이터: { value, done } 객체를 리턴하는 next() 를 가진 값
+iterator.next() 실행 시 {value: 1, done: false} 를 리턴한다.
+
+- 이터러블/이터레이터 프로토콜: 이터러블을 for...of, 전개 연산자 등과 함께 동작하도록한 규약
+
+즉, iterator.next() 실행 시 리턴되는 객체 { value, done } 에서
+value의 값을 a 에 담아 리턴하고 done이 true가 되는 순간 for 문을 마친다.
+
+
+<script>
+  // map.keys()는 key만 뽑는 이터레이터를 리턴한다.
+  // map,values()는 value만 뽑는 이터레이터를 리턴한다.
+  // map.entries()는 key-value를 뽑는 이터레이터를 리턴한다.
+
+  log('Map -----------');
+  const map = new Map([['a', 1], ['b', 2], ['c', 3]]);
+  for (const a of map) {
+    log(a);
+  }
+
+  for (const a of map.keys()) {
+    log(a);
+  }
+
+  for (const a of map.values()) {
+    log(a);
+  }
+
+  for (const a of map.entries()) {
+    log(a);
+  }
+</script>
+
 
 ### 사용자 정의 이터러블을 통해 알아보기
--->
-<script></script>
+
+<script>
+  const iterable = {
+    [Symbol.iterator]() {
+      let i = 3;
+      return {
+        next() {
+          return i == 0 ? { done: true } : { value: i--, done: false };
+        },
+        // Well-formed 이터레이터 / Well-formed 이터러블을 위함
+        [Symbol.iterator]() { return this; }
+      }
+    }
+  };
+
+  let iterator = iterable[Symbol.iterator]();
+  // log(iterator.next());
+  // log(iterator.next());
+  // log(iterator.next());
+  // log(iterator.next());
+
+  for (const a of iterable) log(a);
+
+  // Well-formed 이터레이터 / Well-formed 이터러블
+  for (const a of iterator) log(a);
+
+  // * 잘 구현된 이터레이터의 경우 
+  const arr2 = [1, 2, 3];
+
+  // 1) 이터레이터를 of 뒤에 넣었을 때 잘 순회가 된다.
+  let iter2 = arr2[Symbol.iterator];
+
+  // 이 이터레이터 역시 심볼 이터레이터를 갖고 있다.
+  log(iter2[Symbol.iterator]);
+
+  // 그리고 이 심볼 이터레이터를 실행한 값은 자기 자신이다.
+  log(iter2[Symbol.iterator]() == iter2);
+
+  // 2) 일부 진행했을 때 진행된 이후의 값들로만 순회를 할 수 있다.
+  iter2.next();
+
+  // for (const a of arr2) log(a);
+
+  for (const a of iter2) log(a);
+
+  // -> 이렇게 자기 자신을 반환하는 심볼 이터레이터를 갖고 있으면
+  //    Well-formed 이터레이터 / Well-formed 이터러블 이라고 한다.
+</script>
+
+<script>
+  // 순회 가능
+  // - Symbol.iterator가 구현되어 있기 때문이다.
+  for (const a of document.querySelectorAll('*')) log(a);
+
+  const all = document.querySelectorAll('*');
+  log(all[Symbol.iterator]);
+
+  let iter3 = all[Symbol.iterator]();
+  log(iter3.next());
+  log(iter3.next());
+  log(iter3.next());
+
+</script>
+
 
 ## 전개 연산자
+- 전개 연산자도 이터레이터/이터러블 프로토콜을 따른다.
 
-<script></script>
+<script>
+  const a = [1, 2];
+  log([...a, ...[3, 4]]);
+  // [1, 2, 3, 4]
+
+  a[Symbol.iterator] = null;
+  log([...a, ...[3, 4]]);
+  // Uncaught TypeError: a is not iterable
+
+  log([...a, ...arr, ...set, ...map.values(), ...map.keys()]);
+</script>
