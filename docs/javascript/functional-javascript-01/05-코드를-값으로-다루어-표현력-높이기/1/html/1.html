@@ -19,88 +19,193 @@
   console.clear();
 </script>
 
-# 코드를 값으로 다루어 표현력 높이기
+# 코드를 값으로 다루어 표현력 높이기 (가독성 높이기)
+- 함수형 프로그래밍에서는 코드를 값으로 다룰 수 있기 때문에
+- 어떤 함수가 코드인 함수를 받아 평가하는 시점을 원하는 대로 다룰 수 있다.
+-> 코드의 표현력을 높일 수 있다.
 
 ## go, pipe
 
 <script>
+  // * go
+  // 여러 인자들을 하나의 값으로 축약시킨다.
+  // 연속적으로 다음 함수에게 인자를 전달해준다.
+  // -> reduce
   const go = (...args) => reduce((a, f) => f(a), args);
-  const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs);
 
   go(
-    add(0, 1),
+    0,
+    a => a + 1,
     a => a + 10,
     a => a + 100,
-    log);
+    log
+  );
+
+  go(
+    add(0, 1), // 시작 인자가 2개일 경우
+    a => a + 10,
+    a => a + 100,
+    log
+  );
   // 111
+
+  // * pipe
+  // 함수를 리턴한다.
+  const pipe = (...fs) => (a) => go(a, ...fs);
+  const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs);
+
+  const f = pipe(
+    a => a + 1,
+    a => a + 10,
+    a => a + 100
+  );
 
   const f = pipe(
     (a, b) => a + b,
     a => a + 10,
-    a => a + 100);
+    a => a + 100
+  );
 
-  log(f(0, 1));
-
-  console.clear();
-
+  log(f(0));
+  // 111
 </script>
 
 <script>
-
+  // go 적용 X
   log(
     reduce(
       add,
       map(p => p.price,
         filter(p => p.price < 20000, products))));
 
+  // go 적용 O
   go(
     products,
     products => filter(p => p.price < 20000, products),
     products => map(p => p.price, products),
-    prices =>   reduce(add, prices),
-    log);
+    prices => reduce(add, prices),
+    log
+  );
+</script>
 
+
+## curry
+- 함수를 값으로 다루면서, 받아둔 함수를 원하는 시점에 평가한다.
+- 함수를 받아 함수를 리턴하고, 인자를 받아 인자가 원하는 개수라면
+받아두었던 함수를 나중에 평가시킨다.
+
+<script>
+  const curry = f =>
+    (a, ..._) => _.length ? f(a, ..._) : (..._) => f(a, ..._);
+
+  const mult = curry((a, b) => a * b);
+  log(mult(1));
+  // (..._) => f(a, ..._);
+
+  log(mult(1)(2));
+  // 2
+
+  const mult3 = mult(3);
+  log(mult3(10)); // 30
+  log(mult3(5));  // 15
+  log(mult3(3));  // 9
+</script>
+
+- map, filter, reduce에 curry 적용하기
+인자를 하나만 받으면 일단 이후 인자들을 더 받기로 기다리는 함수를 리턴하게 된다.
+
+<script>
+  const curry = f =>
+    (a, ..._) => _.length ? f(a, ..._) : (..._) => f(a, ..._);
+
+  const map = curry((f, iter) => {
+    let res = [];
+    for (const a of iter) {
+      res.push(f(a));
+    }
+    return res;
+  });
+
+  const filter = curry((f, iter) => {
+    let res = [];
+    for (const a of iter) {
+      if (f(a)) {
+        res.push(a);
+      }
+    }
+    return res;
+  });
+
+  const reduce = curry((f, acc, iter) => {
+    if (!iter) {
+      iter = acc[Symbol.iterator]();
+      acc = iter.next().value;
+    }
+    for (const a of iter) {
+      acc = f(acc, a);
+    }
+    return acc;
+  });
+
+  // go 적용 X
+  log(
+    reduce(
+      add,
+      map(p => p.price,
+        filter(p => p.price < 20000, products))));
+
+  // go 적용 O, curry 적용 X
+  go(
+    products,
+    products => filter(p => p.price < 20000, products),
+    products => map(p => p.price, products),
+    prices => reduce(add, prices),
+    log
+  );
+
+  // curry 적용 O
+  go(
+    products,
+    products => filter(p => p.price < 20000)(products),
+    products => map(p => p.price)(products),
+    prices => reduce(add)(prices),
+    log
+  );
+
+  // curry를 적용하면 이렇게 코드를 줄일 수 있다.
   go(
     products,
     filter(p => p.price < 20000),
     map(p => p.price),
     reduce(add),
-    log);
-
+    log
+  );
 </script>
 
-## curry
-
-<script>
-
-  const mult = curry((a, b) => a * b);
-  log(mult(3)(2));
-
-  const mult3 = mult(3);
-  log(mult3(10));
-  log(mult3(5));
-  log(mult3(3));
-  console.clear();
-</script>
 
 # 함수 조합으로 함수 만들기
 
 <script>
+  // 코드 중복 없애기
   const total_price = pipe(
     map(p => p.price),
-    reduce(add));
+    reduce(add)
+  );
 
   const base_total_price = predi => pipe(
     filter(predi),
-    total_price);
+    total_price
+  );
 
   go(
     products,
     base_total_price(p => p.price < 20000),
-    log);
+    log
+  );
 
   go(
     products,
-    base_total_price(p => p.price >= 20000),
-    log);
+    base_total_price(p => p.price < 20000),
+    log
+  );
 </script>
